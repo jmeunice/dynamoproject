@@ -35,6 +35,7 @@ exports.handler = async (event) => {
         };
         return response;
     }
+
     const username = params.username
     const book = params.book
     const teacher = params.teacher
@@ -50,7 +51,7 @@ exports.handler = async (event) => {
         return response;
     }
     if (action === 'putUser') {
-        const putResult = await putItem('adelphi-practice', username, book, teacher)
+        const putResult = await putItem('Adelphi-practice', username, book, teacher)
         const response = {
             statusCode: 200,
             headers: {
@@ -61,7 +62,7 @@ exports.handler = async (event) => {
         return response;
     }
     if (action === 'getUser') {
-        const getResult = await getItem('adelphi-practice', username)
+        const getResult = await getItem('Adelphi-practice', username)
         if (!getResult) {
             const response = {
                 statusCode: 404,
@@ -72,6 +73,7 @@ exports.handler = async (event) => {
             };
             return response;
         }
+
         const response = {
             statusCode: 200,
             headers: {
